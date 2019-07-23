@@ -20,4 +20,4 @@ imagesc(mahogany);
 
 maple = colorbar;      
 ylabel(maple, 'Temperature (C)')
-colormap('hot'); %colorscheme
+colormap('jet'); %colorscheme

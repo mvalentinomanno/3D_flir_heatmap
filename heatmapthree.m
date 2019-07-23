@@ -35,9 +35,9 @@ zlabel('Temperature (C)');
 xlabel('Width Pixel');
 ylabel('Height Pixel');
 title(cherry);
-maple = colorbar;      
-ylabel(maple, 'Temperature (C)')
-colormap('hot'); %'cus you're hot and you're cold
+acai = colorbar;      
+ylabel(acai, 'Temperature (C)')
+colormap('HSV'); %'cus you're hot and you're cold
 
 drip = str2num(marionberry); %next file
 drip = drip + 1;
