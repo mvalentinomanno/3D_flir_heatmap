@@ -5,21 +5,21 @@
 %to view data at a certain point, click the 'data cursor' in the plot
 %window, then click on the plot
 cranberry = '\nEnter the name of the first csv file you want to visualize \n(Note: the file name must follow this naming convention: radiometry#.csv | e.g. radiometry45.csv) : ';
-huckleberry = input(cranberry,'s');
+huckleberry = input(cranberry,'s'); %get user-specified file name
 
-marionberry = char(extractBetween(huckleberry,"radiometry",".csv",'Boundaries','exclusive'));
+marionberry = char(extractBetween(huckleberry,"radiometry",".csv",'Boundaries','exclusive')); %extract the number
 
-cranberry = 'How many subsequent csv files would you like to visualize? (enter a number): ';
+cranberry = 'How many subsequent csv files would you like to visualize? (enter a number): '; %how many other csv's do you want to visualize?
 huckleberry = input(cranberry) + 1;
 
 for splash = 1:huckleberry
     
 cherry = strcat('radiometry',marionberry);
-cherry = strcat(cherry,'.csv');
+cherry = strcat(cherry,'.csv'); %makes file name
 
-raspberry = csvread(cherry); 
+raspberry = csvread(cherry); %reads in the csv file
 
-strawberry = size(raspberry,1);
+strawberry = size(raspberry,1); %gets file dimensions
 blueberry = size(raspberry,2);
 
 
@@ -29,7 +29,7 @@ for row = 1:strawberry %nested for loop goes through each value
         raspberry(row,col) = grape;
     end
 end
-figure
+figure %plot the next 3d heatmap
 blackberry = surf(raspberry);
 zlabel('Temperature (C)');
 xlabel('Width Pixel');
@@ -39,7 +39,7 @@ maple = colorbar;
 ylabel(maple, 'Temperature (C)')
 colormap('hot'); %'cus you're hot and you're cold
 
-drip = str2num(marionberry);
+drip = str2num(marionberry); %next file
 drip = drip + 1;
 marionberry = num2str(drip);
 end
